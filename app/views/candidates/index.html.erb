@@ -1,2 +1,22 @@
-<h1>Candidates#index</h1>
-<p>Find me in app/views/candidates/index.html.erb</p>
+<div class="row">
+  <%= link_to 'Sync Candidate', invite_candidates_path, class: 'btn btn-success', method: :post %>
+  <table class=" table table-striped" data-sort-name="name" data-sort-order="desc">
+    <thead>
+    <tr>
+    <th data-field="name" data-sortable="true">Name</th>
+    <th data-field="email" data-sortable="true">Email</th>
+    <th data-field="email" data-sortable="true">Mobile</th>
+    </tr>
+    </thead>
+
+    <tbody>
+      <% @candidates.each do |candidate| %>
+        <tr>
+          <td><%= candidate.first_name %><%= candidate.last_name %></td>
+          <td><%= candidate.email %></td>
+          <td><%= candidate.mobile %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

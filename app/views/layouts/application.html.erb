@@ -10,6 +10,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/nav' %>
+    <% if flash.present? %>
+      <% flash.each do |type, content| %>
+        <%= render 'shared/flash_messages', type: type, content: content %>
+      <% end %>
+    <% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
