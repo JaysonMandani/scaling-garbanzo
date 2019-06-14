@@ -13,7 +13,7 @@ class CandidatesController < ApplicationController
         redirect_to candidates_path, flash: { error: 'Candidate was already invited' }
       else
         candidate.invite!
-        redirect_to candidates_path, flash: { message: 'Candidate was successfully invited' }
+        redirect_to candidates_path, flash: { success: 'Candidate was successfully invited' }
       end
     else
       redirect_to candidates_path, flash: { error: 'No candidates found!' }
